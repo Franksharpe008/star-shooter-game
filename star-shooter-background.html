@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Star Shooter Background</title>
+    <style>
+        body {
+            margin: 0;
+            overflow: hidden;
+            background-color: #000;
+        }
+        canvas {
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <canvas id="starfield"></canvas>
+    <script>
+        const canvas = document.getElementById('starfield');
+        const ctx = canvas.getContext('2d');
+
+        canvas.width = window.innerWidth;
+        canvas.height = window.innerHeight;
+
+        let isWarping = false;
+        const warpSpeed = 10;
+
+        const keys = {
+            ArrowUp: false,
+            ArrowDown: false,
+            ArrowLeft: false,
+            ArrowRight: false
+        };
+
+        let dx = 0; // Horizontal velocity
+        let dy = 0; // Vertical velocity
+        const acceleration = 0.2;
+        const friction = 0.98;
+        const maxSpeed = 5;
+
+        const starLayers = {
+            near: { num: 100, stars: [], speed: 0.7, radius: 1.5 },
+            medium: { num: 200, stars: [], speed: 0.4, radius: 1 },
+            far: { num: 400, stars: [], speed: 0.2, radius: 0.5 }
+        };
+
+        const shootingStars = [];
+        const numShootingStars = 2;
+        const nebulae = [];
+        const numNebulae = 7;
+
+        const starColors = ['#FFFFFF', '#FFFFE0', '#ADD8E6', '#FFDAB9'];
+
+        for (const layer in starLayers) {
+            for (let i = 0; i < starLayers[layer].num; i++) {
+                starLayers[layer].stars.push({
+                    x: Math.random() * canvas.width,
+                    y: Math.random() * canvas.height,
+                    radius: Math.random() * starLayers[layer].radius,
+                    baseSpeed: Math.random() * 0.5 + starLayers[layer].speed,
+                    color: starColors[Math.floor(Math.random() * starColors.length)],
+                    opacity: Math.random() * 0.5 + 0.5
+                });
+            }
+        }
+
+        for (let i = 0; i < numNebulae; i++) {
+            nebulae.push({
+                x: Math.random() * canvas.width,
+                y: Math.random() * canvas.height,
+                radius: Math.random() * 300 + 200,
+                color1: `rgba(${Math.random() * 100}, ${Math.random() * 50}, ${Math.random() * 100 + 155}, ${Math.random() * 0.1 + 0.05})`,
+                color2: `rgba(${Math.random() * 100}, ${Math.random() * 50}, ${Math.random() * 100 + 155}, 0)`,
+                driftX: (Math.random() - 0.5) * 0.1,
+                driftY: (Math.random() - 0.5) * 0.1,
+                opacity: 1
+            });
+        }
+
+        function createShootingStar() {
+            return {
+                x: Math.random() * canvas.width,
+                y: Math.random() * canvas.height / 2,
+                len: Math.random() * 80 + 10,
+                speed: Math.random() * 10 + 5,
+                opacity: 1
+            };
+        }
+
+        for (let i = 0; i < numShootingStars; i++) {
+            shootingStars.push(createShootingStar());
+        }
+
+        function draw() {
+            // Update velocities based on key states
+            if (keys.ArrowUp) dy = Math.min(maxSpeed, dy + acceleration);
+            if (keys.ArrowDown) dy = Math.max(-maxSpeed, dy - acceleration);
+            if (keys.ArrowRight) dx = Math.max(-maxSpeed, dx - acceleration);
+            if (keys.ArrowLeft) dx = Math.min(maxSpeed, dx + acceleration);
+
+            // Apply friction
+            dy *= friction;
+            dx *= friction;
+
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            ctx.fillStyle = 'black';
+            ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+            // Draw and update nebulae
+            for (let i = 0; i < numNebulae; i++) {
+                const nebula = nebulae[i];
+                if (!isWarping) {
+                    nebula.opacity += (1 - nebula.opacity) * 0.02;
+                    nebula.x += nebula.driftX - (dx * 0.1);
+                    nebula.y += nebula.driftY - (dy * 0.1);
+
+                    if (nebula.x + nebula.radius < 0) nebula.x = canvas.width + nebula.radius;
+                    if (nebula.x - nebula.radius > canvas.width) nebula.x = -nebula.radius;
+                    if (nebula.y + nebula.radius < 0) nebula.y = canvas.height + nebula.radius;
+                    if (nebula.y - nebula.radius > canvas.height) nebula.y = -nebula.radius;
+                } else {
+                    nebula.opacity -= nebula.opacity * 0.05;
+                }
+
+                const gradient = ctx.createRadialGradient(nebula.x, nebula.y, 0, nebula.x, nebula.y, nebula.radius);
+                gradient.addColorStop(0, nebula.color1);
+                gradient.addColorStop(1, nebula.color2);
+                ctx.fillStyle = gradient;
+                ctx.globalAlpha = nebula.opacity;
+                ctx.beginPath();
+                ctx.arc(nebula.x, nebula.y, nebula.radius, 0, Math.PI * 2);
+                ctx.fill();
+                ctx.globalAlpha = 1;
+            }
+
+            // Draw star layers
+            const centerX = canvas.width / 2;
+            const centerY = canvas.height / 2;
+
+            for (const layer in starLayers) {
+                for (let i = 0; i < starLayers[layer].num; i++) {
+                    const star = starLayers[layer].stars[i];
+                    
+                    if (isWarping) {
+                        const d_x = star.x - centerX;
+                        const d_y = star.y - centerY;
+                        const dist = Math.sqrt(d_x * d_x + d_y * d_y);
+                        const speed = star.baseSpeed * warpSpeed;
+
+                        star.x += (d_x / dist) * speed;
+                        star.y += (d_y / dist) * speed;
+
+                        if (star.x < 0 || star.x > canvas.width || star.y < 0 || star.y > canvas.height) {
+                            const angle = Math.random() * Math.PI * 2;
+                            const radius = Math.random() * 20;
+                            star.x = centerX + Math.cos(angle) * radius;
+                            star.y = centerY + Math.sin(angle) * radius;
+                        }
+                    } else {
+                        star.y += star.baseSpeed + dy;
+                        star.x += dx;
+
+                        star.opacity += (Math.random() - 0.5) * 0.1;
+                        if (star.opacity < 0.2) star.opacity = 0.2;
+                        if (star.opacity > 1) star.opacity = 1;
+
+                        // Wrap stars around the screen
+                        if (star.y > canvas.height) { star.y = 0; star.x = Math.random() * canvas.width; }
+                        if (star.y < 0) { star.y = canvas.height; star.x = Math.random() * canvas.width; }
+                        if (star.x > canvas.width) { star.x = 0; star.y = Math.random() * canvas.height; }
+                        if (star.x < 0) { star.x = canvas.width; star.y = Math.random() * canvas.height; }
+                    }
+
+                    ctx.beginPath();
+                    ctx.arc(star.x, star.y, star.radius, 0, Math.PI * 2);
+                    ctx.fillStyle = star.color;
+                    ctx.globalAlpha = star.opacity;
+                    ctx.fill();
+                    ctx.globalAlpha = 1;
+                }
+            }
+
+            // Draw shooting stars
+            if (!isWarping) {
+                for (let i = 0; i < shootingStars.length; i++) {
+                    const ss = shootingStars[i];
+                    ctx.beginPath();
+                    ctx.moveTo(ss.x, ss.y);
+                    ctx.lineTo(ss.x + ss.len, ss.y - ss.len);
+                    ctx.strokeStyle = `rgba(255, 255, 255, ${ss.opacity})`;
+                    ctx.lineWidth = 2;
+                    ctx.stroke();
+
+                    ss.x -= ss.speed;
+                    ss.y += ss.speed;
+                    ss.opacity -= 0.02;
+
+                    if (ss.opacity <= 0) {
+                        shootingStars[i] = createShootingStar();
+                    }
+                }
+            }
+
+            requestAnimationFrame(draw);
+        }
+
+        draw();
+
+        window.addEventListener('mousedown', () => { isWarping = true; });
+        window.addEventListener('mouseup', () => { isWarping = false; });
+
+        window.addEventListener('keydown', (e) => { if (e.key in keys) keys[e.key] = true; });
+        window.addEventListener('keyup', (e) => { if (e.key in keys) keys[e.key] = false; });
+
+        window.addEventListener('resize', () => {
+            canvas.width = window.innerWidth;
+            canvas.height = window.innerHeight;
+            // Re-initialize stars and nebulae on resize if needed
+        });
+    </script>
+</body>
+</html>
