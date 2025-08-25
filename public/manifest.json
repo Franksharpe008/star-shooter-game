@@ -1,0 +1,451 @@
+{
+  "bundles": [
+    {
+      "name": "backgrounds",
+      "assets": [
+        {
+          "alias": "nebula1",
+          "src": "https://volter-production-assets-upload.s3.amazonaws.com/aaa1f26b159c459589d82688c5ae007d/main/preview/assets/backgrounds/nebula1.png",
+          "data": {
+            "height": 600,
+            "transparent": false,
+            "width": 800
+          }
+        },
+        {
+          "alias": "nebula2",
+          "src": "https://volter-production-assets-upload.s3.amazonaws.com/aaa1f26b159c459589d82688c5ae007d/main/preview/assets/backgrounds/nebula2.png",
+          "data": {
+            "height": 600,
+            "transparent": false,
+            "width": 800
+          }
+        },
+        {
+          "alias": "starfield",
+          "src": "https://volter-production-assets-upload.s3.amazonaws.com/aaa1f26b159c459589d82688c5ae007d/main/preview/assets/backgrounds/starfield.png",
+          "data": {
+            "height": 600,
+            "transparent": false,
+            "width": 800
+          }
+        }
+      ]
+    },
+    {
+      "name": "characters",
+      "assets": [
+        {
+          "alias": "grunt_drone",
+          "src": "https://volter-production-assets-upload.s3.amazonaws.com/483f85fac4134bdb9db4bf957170b161/main/preview/assets/characters/grunt_drone.png",
+          "data": {
+            "height": 48,
+            "transparent": true,
+            "width": 48
+          }
+        },
+        {
+          "alias": "hive_spitter",
+          "src": "https://volter-production-assets-upload.s3.amazonaws.com/483f85fac4134bdb9db4bf957170b161/main/preview/assets/characters/hive_spitter.png",
+          "data": {
+            "height": 128,
+            "transparent": true,
+            "width": 128
+          }
+        },
+        {
+          "alias": "hive_spitter_bug_drone",
+          "src": "https://volter-production-assets-upload.s3.amazonaws.com/483f85fac4134bdb9db4bf957170b161/main/preview/assets/characters/hive_spitter_bug_drone.png",
+          "data": {
+            "height": 16,
+            "transparent": true,
+            "width": 16
+          }
+        },
+        {
+          "alias": "kamikaze_bomber",
+          "src": "https://volter-production-assets-upload.s3.amazonaws.com/483f85fac4134bdb9db4bf957170b161/main/preview/assets/characters/kamikaze_bomber.png",
+          "data": {
+            "height": 32,
+            "transparent": true,
+            "width": 32
+          }
+        },
+        {
+          "alias": "serpent_fighter_segment",
+          "src": "https://volter-production-assets-upload.s3.amazonaws.com/483f85fac4134bdb9db4bf957170b161/main/preview/assets/characters/serpent_fighter_segment.png",
+          "data": {
+            "height": 32,
+            "transparent": true,
+            "width": 32
+          }
+        },
+        {
+          "alias": "shield_carrier",
+          "src": "https://volter-production-assets-upload.s3.amazonaws.com/483f85fac4134bdb9db4bf957170b161/main/preview/assets/characters/shield_carrier.png",
+          "data": {
+            "height": 64,
+            "transparent": true,
+            "width": 64
+          }
+        },
+        {
+          "alias": "silverback_starship",
+          "src": "https://volter-production-assets-upload.s3.amazonaws.com/94bf5b752a634a5096a2a9f797d13572/a818cbad69374efbb8cbcf2042443399/preview/assets/characters/silverback_starship.png",
+          "data": {
+            "height": 64,
+            "transparent": true,
+            "width": 128
+          }
+        }
+      ]
+    },
+    {
+      "name": "effects",
+      "assets": [
+        {
+          "alias": "energy_burst",
+          "src": "https://volter-production-assets-upload.s3.amazonaws.com/d34187ac68e44d1b842755ed34db50d4/main/preview/assets/effects/energy_burst.png",
+          "data": {
+            "height": 32,
+            "transparent": true,
+            "width": 128
+          }
+        },
+        {
+          "alias": "hit_spark",
+          "src": "https://volter-production-assets-upload.s3.amazonaws.com/d34187ac68e44d1b842755ed34db50d4/main/preview/assets/effects/hit_spark.png",
+          "data": {
+            "height": 16,
+            "transparent": true,
+            "width": 64
+          }
+        },
+        {
+          "alias": "large_explosion",
+          "src": "https://volter-production-assets-upload.s3.amazonaws.com/d34187ac68e44d1b842755ed34db50d4/main/preview/assets/effects/large_explosion.png",
+          "data": {
+            "height": 32,
+            "transparent": true,
+            "width": 192
+          }
+        },
+        {
+          "alias": "small_explosion",
+          "src": "https://volter-production-assets-upload.s3.amazonaws.com/d34187ac68e44d1b842755ed34db50d4/main/preview/assets/effects/small_explosion.png",
+          "data": {
+            "height": 32,
+            "transparent": true,
+            "width": 128
+          }
+        }
+      ]
+    },
+    {
+      "name": "enemies",
+      "assets": [
+        {
+          "alias": "acid_blob",
+          "src": "https://volter-production-assets-upload.s3.amazonaws.com/d34187ac68e44d1b842755ed34db50d4/main/preview/assets/enemies/acid_blob.png",
+          "data": {
+            "height": 32,
+            "transparent": true,
+            "width": 32
+          }
+        },
+        {
+          "alias": "basic_plasma_bolt",
+          "src": "https://volter-production-assets-upload.s3.amazonaws.com/d34187ac68e44d1b842755ed34db50d4/main/preview/assets/enemies/basic_plasma_bolt.png",
+          "data": {
+            "height": 32,
+            "transparent": true,
+            "width": 32
+          }
+        },
+        {
+          "alias": "boss_enemy",
+          "src": "https://volter-production-assets-upload.s3.amazonaws.com/d34187ac68e44d1b842755ed34db50d4/main/preview/assets/enemies/boss_enemy.png",
+          "data": {
+            "height": 128,
+            "transparent": true,
+            "width": 512
+          }
+        },
+        {
+          "alias": "enemy_laser",
+          "src": "https://volter-production-assets-upload.s3.amazonaws.com/d34187ac68e44d1b842755ed34db50d4/main/preview/assets/enemies/enemy_laser.png",
+          "data": {
+            "height": 16,
+            "transparent": true,
+            "width": 64
+          }
+        },
+        {
+          "alias": "fireball",
+          "src": "https://volter-production-assets-upload.s3.amazonaws.com/d34187ac68e44d1b842755ed34db50d4/main/preview/assets/enemies/fireball.png",
+          "data": {
+            "height": 32,
+            "transparent": true,
+            "width": 32
+          }
+        },
+        {
+          "alias": "kamikaze_enemy",
+          "src": "https://volter-production-assets-upload.s3.amazonaws.com/d34187ac68e44d1b842755ed34db50d4/main/preview/assets/enemies/kamikaze_enemy.png",
+          "data": {
+            "height": 32,
+            "transparent": true,
+            "width": 128
+          }
+        },
+        {
+          "alias": "mini_rocket",
+          "src": "https://volter-production-assets-upload.s3.amazonaws.com/d34187ac68e44d1b842755ed34db50d4/main/preview/assets/enemies/mini_rocket.png",
+          "data": {
+            "height": 32,
+            "transparent": true,
+            "width": 32
+          }
+        },
+        {
+          "alias": "serpent_enemy",
+          "src": "https://volter-production-assets-upload.s3.amazonaws.com/d34187ac68e44d1b842755ed34db50d4/main/preview/assets/enemies/serpent_enemy.png",
+          "data": {
+            "height": 64,
+            "transparent": true,
+            "width": 256
+          }
+        }
+      ]
+    },
+    {
+      "name": "music",
+      "assets": [
+        {
+          "alias": "battleTheme",
+          "src": "https://volter-production-assets-upload.s3.amazonaws.com/aaa1f26b159c459589d82688c5ae007d/18f42cc0b56e4038b27b7b187c4a8e85/preview/assets/music/battle_theme.mp3"
+        },
+        {
+          "alias": "mainTheme",
+          "src": "https://volter-production-assets-upload.s3.amazonaws.com/aaa1f26b159c459589d82688c5ae007d/18f42cc0b56e4038b27b7b187c4a8e85/preview/assets/music/main_theme.mp3"
+        }
+      ]
+    },
+    {
+      "name": "powerups",
+      "assets": [
+        {
+          "alias": "drone_drop",
+          "src": "https://volter-production-assets-upload.s3.amazonaws.com/d34187ac68e44d1b842755ed34db50d4/main/preview/assets/powerups/drone_drop.png",
+          "data": {
+            "height": 32,
+            "transparent": true,
+            "width": 128
+          }
+        },
+        {
+          "alias": "laser_drop",
+          "src": "https://volter-production-assets-upload.s3.amazonaws.com/d34187ac68e44d1b842755ed34db50d4/main/preview/assets/powerups/laser_drop.png",
+          "data": {
+            "height": 32,
+            "transparent": true,
+            "width": 128
+          }
+        },
+        {
+          "alias": "magnet_drop",
+          "src": "https://volter-production-assets-upload.s3.amazonaws.com/d34187ac68e44d1b842755ed34db50d4/main/preview/assets/powerups/magnet_drop.png",
+          "data": {
+            "height": 32,
+            "transparent": true,
+            "width": 128
+          }
+        },
+        {
+          "alias": "magnet_powerup",
+          "src": "https://volter-production-assets-upload.s3.amazonaws.com/d34187ac68e44d1b842755ed34db50d4/main/preview/assets/powerups/magnet_powerup.png",
+          "data": {
+            "height": 32,
+            "transparent": true,
+            "width": 128
+          }
+        },
+        {
+          "alias": "missile_drop",
+          "src": "https://volter-production-assets-upload.s3.amazonaws.com/d34187ac68e44d1b842755ed34db50d4/main/preview/assets/powerups/missile_drop.png",
+          "data": {
+            "height": 32,
+            "transparent": true,
+            "width": 128
+          }
+        },
+        {
+          "alias": "shield_drop",
+          "src": "https://volter-production-assets-upload.s3.amazonaws.com/d34187ac68e44d1b842755ed34db50d4/main/preview/assets/powerups/shield_drop.png",
+          "data": {
+            "height": 32,
+            "transparent": true,
+            "width": 128
+          }
+        },
+        {
+          "alias": "spread_shot_drop",
+          "src": "https://volter-production-assets-upload.s3.amazonaws.com/d34187ac68e44d1b842755ed34db50d4/main/preview/assets/powerups/spread_shot_drop.png",
+          "data": {
+            "height": 32,
+            "transparent": true,
+            "width": 128
+          }
+        }
+      ]
+    },
+    {
+      "name": "sfx",
+      "assets": [
+        {
+          "alias": "explosion",
+          "src": "https://volter-production-assets-upload.s3.amazonaws.com/aaa1f26b159c459589d82688c5ae007d/18f42cc0b56e4038b27b7b187c4a8e85/preview/assets/sfx/explosion.ogg"
+        },
+        {
+          "alias": "hit",
+          "src": "https://volter-production-assets-upload.s3.amazonaws.com/aaa1f26b159c459589d82688c5ae007d/18f42cc0b56e4038b27b7b187c4a8e85/preview/assets/sfx/hit.ogg"
+        },
+        {
+          "alias": "powerup",
+          "src": "https://volter-production-assets-upload.s3.amazonaws.com/aaa1f26b159c459589d82688c5ae007d/18f42cc0b56e4038b27b7b187c4a8e85/preview/assets/sfx/powerup.ogg"
+        },
+        {
+          "alias": "shoot",
+          "src": "https://volter-production-assets-upload.s3.amazonaws.com/aaa1f26b159c459589d82688c5ae007d/18f42cc0b56e4038b27b7b187c4a8e85/preview/assets/sfx/shoot.ogg"
+        }
+      ]
+    },
+    {
+      "name": "sprites",
+      "assets": [
+        {
+          "alias": "bullet",
+          "src": "https://volter-production-assets-upload.s3.amazonaws.com/aaa1f26b159c459589d82688c5ae007d/main/preview/assets/sprites/bullet.png",
+          "data": {
+            "height": 6,
+            "transparent": true,
+            "width": 6
+          }
+        },
+        {
+          "alias": "enemyShip",
+          "src": "https://volter-production-assets-upload.s3.amazonaws.com/aaa1f26b159c459589d82688c5ae007d/main/preview/assets/sprites/enemyShip.png",
+          "data": {
+            "height": 20,
+            "transparent": true,
+            "width": 30
+          }
+        },
+        {
+          "alias": "explosion",
+          "src": "https://volter-production-assets-upload.s3.amazonaws.com/aaa1f26b159c459589d82688c5ae007d/main/preview/assets/sprites/explosion.png",
+          "data": {
+            "height": 60,
+            "transparent": true,
+            "width": 60
+          }
+        },
+        {
+          "alias": "laser",
+          "src": "https://volter-production-assets-upload.s3.amazonaws.com/aaa1f26b159c459589d82688c5ae007d/main/preview/assets/sprites/laser.png",
+          "data": {
+            "height": 20,
+            "transparent": true,
+            "width": 4
+          }
+        },
+        {
+          "alias": "playerShip",
+          "src": "https://volter-production-assets-upload.s3.amazonaws.com/aaa1f26b159c459589d82688c5ae007d/main/preview/assets/sprites/playerShip.png",
+          "data": {
+            "height": 40,
+            "transparent": true,
+            "width": 30
+          }
+        },
+        {
+          "alias": "powerupShield",
+          "src": "https://volter-production-assets-upload.s3.amazonaws.com/aaa1f26b159c459589d82688c5ae007d/main/preview/assets/sprites/powerupShield.png",
+          "data": {
+            "height": 30,
+            "transparent": true,
+            "width": 30
+          }
+        },
+        {
+          "alias": "powerupSpread",
+          "src": "https://volter-production-assets-upload.s3.amazonaws.com/aaa1f26b159c459589d82688c5ae007d/main/preview/assets/sprites/powerupSpread.png",
+          "data": {
+            "height": 30,
+            "transparent": true,
+            "width": 30
+          }
+        }
+      ]
+    },
+    {
+      "name": "weapons",
+      "assets": [
+        {
+          "alias": "charge_shot",
+          "src": "https://volter-production-assets-upload.s3.amazonaws.com/d34187ac68e44d1b842755ed34db50d4/main/preview/assets/weapons/charge_shot.png",
+          "data": {
+            "height": 32,
+            "transparent": true,
+            "width": 128
+          }
+        },
+        {
+          "alias": "homing_missile",
+          "src": "https://volter-production-assets-upload.s3.amazonaws.com/d34187ac68e44d1b842755ed34db50d4/main/preview/assets/weapons/homing_missile.png",
+          "data": {
+            "height": 32,
+            "transparent": true,
+            "width": 32
+          }
+        },
+        {
+          "alias": "laser_beam",
+          "src": "https://volter-production-assets-upload.s3.amazonaws.com/d34187ac68e44d1b842755ed34db50d4/main/preview/assets/weapons/laser_beam.png",
+          "data": {
+            "height": 16,
+            "transparent": true,
+            "width": 128
+          }
+        },
+        {
+          "alias": "orbit_drone",
+          "src": "https://volter-production-assets-upload.s3.amazonaws.com/d34187ac68e44d1b842755ed34db50d4/main/preview/assets/weapons/orbit_drone.png",
+          "data": {
+            "height": 32,
+            "transparent": true,
+            "width": 128
+          }
+        },
+        {
+          "alias": "shield_bubble",
+          "src": "https://volter-production-assets-upload.s3.amazonaws.com/d34187ac68e44d1b842755ed34db50d4/main/preview/assets/weapons/shield_bubble.png",
+          "data": {
+            "height": 32,
+            "transparent": true,
+            "width": 128
+          }
+        },
+        {
+          "alias": "spread_shot_orb",
+          "src": "https://volter-production-assets-upload.s3.amazonaws.com/d34187ac68e44d1b842755ed34db50d4/main/preview/assets/weapons/spread_shot_orb.png",
+          "data": {
+            "height": 32,
+            "transparent": true,
+            "width": 32
+          }
+        }
+      ]
+    }
+  ]
+}
