@@ -86,8 +86,8 @@ class Starfield {
     update() {
         if (this.keys.ArrowUp) this.dy = Math.min(this.maxSpeed, this.dy + this.acceleration);
         if (this.keys.ArrowDown) this.dy = Math.max(-this.maxSpeed, this.dy - this.acceleration);
-        if (this.keys.ArrowLeft) this.dx = Math.max(-this.maxSpeed, this.dx - this.acceleration);
-        if (this.keys.ArrowRight) this.dx = Math.min(this.maxSpeed, this.dx + this.acceleration);
+        if (this.keys.ArrowLeft) this.dx = Math.min(this.maxSpeed, this.dx + this.acceleration);
+        if (this.keys.ArrowRight) this.dx = Math.max(-this.maxSpeed, this.dx - this.acceleration);
 
         this.dy *= this.friction;
         this.dx *= this.friction;
